@@ -1,0 +1,5 @@
+rootProject.name = 'msa-example'
+include 'board-service'
+include 'member-service'
+include 'msa-common'
+include 'discovery-server'
