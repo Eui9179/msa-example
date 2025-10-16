@@ -29,3 +29,21 @@
 2. WebClient
 3. OpenFeign
 4. 메시지 브로커
+
+# 3. Service Discovery
+
+Service Discovery 패턴은 서비스의 IP, Port 등을 저장하고 관리하는 주소록의 역할을 한다.
+서비스가 추가될 때마다 API Gateway에 서비스의 정보를 수정하고 관리하지 않고 Service Discovery 패턴을 통해 이 불편함을 해소한다.
+
+Service Discovery 패턴을 구현함으로써 서비스를 호출하는 쪽에서는 서비스의 위치를 몰라도
+Service Discovery를 구현한 구현체에 질의함으로써 요청을 전달할 수 있다.
+
+이 프로젝트에서 사용할 Netflix Eureka는 Client-Side Discovery이다.
+
+Client-Side Discovery는 클라이언트가 직접 Service Registry에 질의하여 IP와 Port를 받아서 호출하는 방식이다.
+어플리케이션 단에서 처리가 가능하고 직접 구현하기 위해 Client-Side Discovery 방식을 사용한다.
+
+> **Server-Side Discovery**
+> Service Registry 앞단에 로드밸런서를 두어 로드밸런서가 Service Registry에 호출하는 방식이다.
+> 클라이언트는 로드밸런서에 요청만 보내면 된다.
+
