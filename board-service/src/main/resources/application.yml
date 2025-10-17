@@ -1,6 +1,10 @@
 spring:
   application:
     name: board-service
+  h2:
+    console:
+      enabled: true
+
 
 eureka:
   instance:
