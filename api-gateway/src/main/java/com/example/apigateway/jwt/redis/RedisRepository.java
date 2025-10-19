@@ -1,4 +1,4 @@
-package redis;
+package com.example.apigateway.jwt.redis;
 
 import java.util.concurrent.TimeUnit;
 

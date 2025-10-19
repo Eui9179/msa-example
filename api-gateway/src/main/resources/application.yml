@@ -22,3 +22,8 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 server:
   port: 9001
+jwt:
+  expired:
+    access-token: 300
+    refresh-token: 3000
+  secret: secret

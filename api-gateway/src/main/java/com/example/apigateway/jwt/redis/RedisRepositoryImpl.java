@@ -1,4 +1,4 @@
-package redis;
+package com.example.apigateway.jwt.redis;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;

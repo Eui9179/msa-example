@@ -2,8 +2,6 @@ package com.example.memberservice.common.jwt.redis;
 
 import com.example.memberservice.common.jwt.provider.JwtProvider;
 import org.springframework.data.redis.core.RedisTemplate;
-import redis.RedisRepository;
-import redis.RedisRepositoryImpl;
 
 import java.util.concurrent.TimeUnit;
 
