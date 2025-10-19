@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: board-service
+          uri: lb://board-service
+          predicates:
+            - Path=/api/v1/board/**, /api/v1/boards
+
+server:
+  port: 9001

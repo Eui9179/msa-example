@@ -47,3 +47,23 @@ Client-Side Discovery는 클라이언트가 직접 Service Registry에 질의하
 > Service Registry 앞단에 로드밸런서를 두어 로드밸런서가 Service Registry에 호출하는 방식이다.
 > 클라이언트는 로드밸런서에 요청만 보내면 된다.
 
+# 4. API Gateway
+
+외부에서 각 마이크로 서비스로 진입하는 진입점으로 API Gateway를 공통되게 사용하여 외부에서는 각 마이크로 서비스를 몰라도 API Gatewy를 통해
+라우팅을 할 수 있다.
+
+또한 추가적으로 요청에 대한 공통 관심사(인증, 모니터링)를 API Gateway에서 처리할 수 있다.
+
+- Netflix Zuul: 동기 방식
+- Spring Cloud Gateway: Netty 기반의 비동기/Non-blocking 방식 (Spring webFlux)
+
+Spring 측에서 Spring Cloud Gateway만 지원을 유지하기로 했기 때문에 Spring Cloud Gateway를 사용하는 것이 좋다.
+
+### 동작방식
+1. 클라이언트가 Spring Cloud Gateway로 요청
+2. Gateway Handler Mapping에서 요청 경로를 파악해서 Gateway Web Mapping(Handler)로 요청을 전달
+3. 핸들러에서 해당 요청과 관련된 Pre Filter 로직 실행
+4. 프록시된 서비스로 라우팅
+5. 프록시 서비스가 실행되고 Response를 반환
+6. 핸들러에서 Response를 수신하고 Post Filter 로직 실행
+
